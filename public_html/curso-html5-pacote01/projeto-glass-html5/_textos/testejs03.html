@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="pt-br">
+    <head>
+        <title>Teste JavaScript</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            var quebrada = false;
+            function mudaLampada(tipo) 
+            {
+              
+                if (!quebrada) // testa condição da variavel quebrada. Nesse caso se NÃO FOR VERDADEIRO executa a condição
+                {
+                document.getElementById("apagada").src = "../_imagens/" + tipo + ".jpg"; // onde está "tipo" recebe o parâmetro do nome do arquivo descrito em "img src" no HTML, lampada-acesa, lampagada-apagada, lampada-quebrada, carregando arquivo certo conforme o event
+                     if (tipo == 'lampada-quebrada') //testa se a condição é verdadeira para o event "onclick" ou seja, quando o usuário clicka na imagem a condição é satisfeita e a variável "quebrada" passa a ser TRUE, logo o IF "!quebrada" não executa mais
+                      {
+                          quebrada = true;
+                      }
+                }
+                
+            }
+            
+        </script>
+    </head>
+  
+ 
+    <body>
+        <div>
+            <h1>Acenda a lâmpada</h1>
+            
+            <img src="../_imagens/lampada-apagada.jpg" id="apagada" onmousemove="mudaLampada('lampada-acesa')" onmouseout="mudaLampada('lampada-apagada')" onclick="mudaLampada('lampada-quebrada')"/> <!-- PASSA O PARAMETRO PARA A FUNCTION mudaLampada PARA PREENCHER CORRETAMENTE O CAMINHO DA IMAGEM A SER SUBSTITUIDA DE ACORDO COM AS CONDIÇÕES DOS "IF" -->
+        </div>
+    </body>
+</html>

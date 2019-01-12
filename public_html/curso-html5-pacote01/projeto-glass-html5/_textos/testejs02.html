@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="pt-br">
+    <head>
+        <title>Teste JavaScript</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function acendeLampada() 
+            {
+                document.getElementById("apagada").src ="../_imagens/lampada-acesa.jpg";
+                
+                
+            }
+            function apagaLampada()
+            {
+                document.getElementById("apagada").src="../_imagens/lampada-apagada.jpg";
+            }
+            function quebraLampada()
+            {
+                document.getElementById("apagada").src="../_imagens/lampada-quebrada.jpg";
+            }
+        </script>
+    </head>
+  
+ 
+    <body>
+        <div>
+            <h1>Acenda a lâmpada</h1>
+            
+            <img src="../_imagens/lampada-apagada.jpg" id="apagada" onmousemove="acendeLampada()" onmouseout="apagaLampada()" onclick="quebraLampada()"/>
+        </div>
+    </body>
+</html>
